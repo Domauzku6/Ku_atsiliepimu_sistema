@@ -42,5 +42,4 @@ pip install pygame_ce
 | kabinetas    | dėstytojas      | paskaita                           | laikas             | atsiliepimas (1–10) |
 |---|---|---|---|---|
 |311 bijunu 17 | Andrius Stulgys | kompiuteriu ir pramoniniai tinklai | "2026-09-29 11:30" |   10                |
-|---|---|---|---|---|
 
