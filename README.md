@@ -39,5 +39,7 @@ pip install pygame_ce
 ```
 - [ ] **Atsakymų saugojimas**: funkcija arba metodas, kuris gautą atsakymą saugotų lokaliai CSV faile `proof_of_concept.csv`, su stulpeliais:
 
-| kabinetas | dėstytojas | paskaita | laikas | atsiliepimas (1–10) |
+| kabinetas    | dėstytojas      | paskaita                           | laikas             | atsiliepimas (1–10) |
+|311 bijunu 17 | Andrius Stulgys | kompiuteriu ir pramoniniai tinklai | "2026-09-29 11:30" |   10                |
 |---|---|---|---|---|
+
