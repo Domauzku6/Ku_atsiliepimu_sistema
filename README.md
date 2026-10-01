@@ -33,6 +33,10 @@ python calendar_lookup.py
 ## Trūksta
 
 - [ ] **GUI**: siūlau per bet kurį AI, svarbu kažkas gražaus ir veikiančio
+siūlau naudot pygame library https://www.pygame.org/docs/
+```bash
+pip install pygame_ce
+```
 - [ ] **Atsakymų saugojimas**: funkcija arba metodas, kuris gautą atsakymą saugotų lokaliai CSV faile `proof_of_concept.csv`, su stulpeliais:
 
 | kabinetas | dėstytojas | paskaita | laikas | atsiliepimas (1–10) |
