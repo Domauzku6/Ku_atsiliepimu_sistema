@@ -18,6 +18,9 @@ dl.get_todays_date_iso()    # grąžina esamą dieną 'YYYY-MM-DD'
 ```
 
 ## Testavimas
+```bash
+git clone https://github.com/Domauzku6/Ku_atsiliepimu_sistema.git
+```
 
 ```bash
 pip install -r requirements.txt
