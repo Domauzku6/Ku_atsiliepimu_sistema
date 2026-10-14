@@ -1,0 +1,4 @@
+pygame-ce
+requests
+truststore
+playwright
