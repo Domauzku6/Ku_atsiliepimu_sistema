@@ -1,0 +1,1946 @@
+{
+  "data": [
+    {
+      "id": 171,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 108370,
+            "name": "Inžinerinė ir kompiuterinė grafika",
+            "from": "2026-10-01 08:20",
+            "to": "2026-10-01 09:50",
+            "from_time": "08:20",
+            "to_time": "09:50",
+            "type": "lecture",
+            "reservable_id": 171,
+            "user_id": 647,
+            "person_responsible": 85,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 85,
+              "name": "Žana Špedt"
+            },
+            "reservable": {
+              "id": 171,
+              "name": "207 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 108384,
+            "name": "Inžinerinė ir kompiuterinė grafika",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 171,
+            "user_id": 647,
+            "person_responsible": 85,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 85,
+              "name": "Žana Špedt"
+            },
+            "reservable": {
+              "id": 171,
+              "name": "207 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 108401,
+            "name": "Inžinerinė ir kompiuterinė grafika",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 171,
+            "user_id": 647,
+            "person_responsible": 85,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 85,
+              "name": "Žana Špedt"
+            },
+            "reservable": {
+              "id": 171,
+              "name": "207 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 103616,
+            "name": "Statiniai ant deformuojamo pagrindo, BIM aplinka",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 171,
+            "user_id": 647,
+            "person_responsible": 1798,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1798,
+              "name": "Artūras Šlauteris"
+            },
+            "reservable": {
+              "id": 171,
+              "name": "207 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 172,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 110972,
+            "name": "Saityno technologijos",
+            "from": "2026-10-01 08:20",
+            "to": "2026-10-01 09:50",
+            "from_time": "08:20",
+            "to_time": "09:50",
+            "type": "lecture",
+            "reservable_id": 172,
+            "user_id": 647,
+            "person_responsible": null,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "reservable": {
+              "id": 172,
+              "name": "208 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 167,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 99169,
+            "name": "Programinės įrangos kūrimo procesų automatizavimas",
+            "from": "2026-10-01 08:20",
+            "to": "2026-10-01 11:30",
+            "from_time": "08:20",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 167,
+            "user_id": 647,
+            "person_responsible": 400,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 400,
+              "name": "Jurij Tekutov"
+            },
+            "reservable": {
+              "id": 167,
+              "name": "409 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 101982,
+            "name": "Automation of Software Development Processes",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 15:10",
+            "from_time": "12:00",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 167,
+            "user_id": 647,
+            "person_responsible": 400,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 400,
+              "name": "Jurij Tekutov"
+            },
+            "reservable": {
+              "id": 167,
+              "name": "409 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 109290,
+            "name": "Techninių sistemų patikimumas",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 167,
+            "user_id": 647,
+            "person_responsible": 1402,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1402,
+              "name": "Darius Narmontas"
+            },
+            "reservable": {
+              "id": 167,
+              "name": "409 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 87,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 92993,
+            "name": "General Chemistry (lab.)",
+            "from": "2026-10-01 09:20",
+            "to": "2026-10-01 09:50",
+            "from_time": "09:20",
+            "to_time": "09:50",
+            "type": "event",
+            "reservable_id": 87,
+            "user_id": 647,
+            "person_responsible": 1673,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1673,
+              "name": "Rasa Majauskienė"
+            },
+            "reservable": {
+              "id": 87,
+              "name": "431 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 110077,
+            "name": "General Chemistry (lab.)",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 87,
+            "user_id": 647,
+            "person_responsible": 1673,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1673,
+              "name": "Rasa Majauskienė"
+            },
+            "reservable": {
+              "id": 87,
+              "name": "431 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 169,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 92872,
+            "name": "General chemistry",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 169,
+            "user_id": 647,
+            "person_responsible": 2585,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2585,
+              "name": "Audronė Žukauskaitė"
+            },
+            "reservable": {
+              "id": 169,
+              "name": "303 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 92888,
+            "name": "General Chemistry",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 169,
+            "user_id": 647,
+            "person_responsible": 2585,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2585,
+              "name": "Audronė Žukauskaitė"
+            },
+            "reservable": {
+              "id": 169,
+              "name": "303 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 91809,
+            "name": "Biodegalai ir biorafinavimo technologijos",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 169,
+            "user_id": 647,
+            "person_responsible": 2585,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2585,
+              "name": "Audronė Žukauskaitė"
+            },
+            "reservable": {
+              "id": 169,
+              "name": "303 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 163,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 93692,
+            "name": "Elektros ir elektronikos schemų projektavimas",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 163,
+            "user_id": 647,
+            "person_responsible": 909,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 909,
+              "name": "Audrius Senulis"
+            },
+            "reservable": {
+              "id": 163,
+              "name": "410 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 93738,
+            "name": "Synthesis and Simulation of Electrical Circuits",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 163,
+            "user_id": 647,
+            "person_responsible": 909,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 909,
+              "name": "Audrius Senulis"
+            },
+            "reservable": {
+              "id": 163,
+              "name": "410 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 148,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 95213,
+            "name": "Duomenų struktūros ir algoritmai",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 148,
+            "user_id": 647,
+            "person_responsible": 1283,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1283,
+              "name": "Vitalij Denisov"
+            },
+            "reservable": {
+              "id": 148,
+              "name": "215 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 90855,
+            "name": "Verslo ir inžinerinių projektų valdymas",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 15:10",
+            "from_time": "12:00",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 148,
+            "user_id": 647,
+            "person_responsible": 315,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 315,
+              "name": "Darius Burgis"
+            },
+            "reservable": {
+              "id": 148,
+              "name": "215 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 90871,
+            "name": "Business and Engineering Projects Management",
+            "from": "2026-10-01 15:20",
+            "to": "2026-10-01 16:50",
+            "from_time": "15:20",
+            "to_time": "16:50",
+            "type": "lecture",
+            "reservable_id": 148,
+            "user_id": 647,
+            "person_responsible": 315,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 315,
+              "name": "Darius Burgis"
+            },
+            "reservable": {
+              "id": 148,
+              "name": "215 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 100,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 102715,
+            "name": "Sustainable Energetics",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 100,
+            "user_id": 647,
+            "person_responsible": 3048,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 3048,
+              "name": "Žilvinas Kryževičius"
+            },
+            "reservable": {
+              "id": 100,
+              "name": "318 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 91767,
+            "name": "Atsinaujinantys energijos ištekliai",
+            "from": "2026-10-01 15:20",
+            "to": "2026-10-01 16:50",
+            "from_time": "15:20",
+            "to_time": "16:50",
+            "type": "lecture",
+            "reservable_id": 100,
+            "user_id": 647,
+            "person_responsible": 3048,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 3048,
+              "name": "Žilvinas Kryževičius"
+            },
+            "reservable": {
+              "id": 100,
+              "name": "318 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 91778,
+            "name": "Biotechnologijos",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 100,
+            "user_id": 647,
+            "person_responsible": 2165,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2165,
+              "name": "Viltė Žukauskaitė"
+            },
+            "reservable": {
+              "id": 100,
+              "name": "318 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 140,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 104981,
+            "name": "Energetinis efektyvumas technologiniuose procesuose",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 140,
+            "user_id": 647,
+            "person_responsible": 2217,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2217,
+              "name": "Artūras Tadžijevas"
+            },
+            "reservable": {
+              "id": 140,
+              "name": "115 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 99990,
+            "name": "3D Printing Technologies and Research",
+            "from": "2026-10-01 13:40",
+            "to": "2026-10-01 15:10",
+            "from_time": "13:40",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 140,
+            "user_id": 647,
+            "person_responsible": 2217,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2217,
+              "name": "Artūras Tadžijevas"
+            },
+            "reservable": {
+              "id": 140,
+              "name": "115 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 103234,
+            "name": "Theory of Machhines and Mechanisms, Machiune Elements",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 140,
+            "user_id": 647,
+            "person_responsible": null,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "reservable": {
+              "id": 140,
+              "name": "115 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 137,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 104997,
+            "name": "Mechaninių sistemų projektavimas su kursiniu projektu",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 137,
+            "user_id": 647,
+            "person_responsible": 1132,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1132,
+              "name": "Marius Vasylius"
+            },
+            "reservable": {
+              "id": 137,
+              "name": "118 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 107484,
+            "name": "Skaitmeninės technologijos laivų statyboje",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 15:10",
+            "from_time": "12:00",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 137,
+            "user_id": 647,
+            "person_responsible": 1132,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1132,
+              "name": "Marius Vasylius"
+            },
+            "reservable": {
+              "id": 137,
+              "name": "118 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 149,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 110913,
+            "name": "Innovation Management and Project Management",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 11:30",
+            "from_time": "10:00",
+            "to_time": "11:30",
+            "type": "lecture",
+            "reservable_id": 149,
+            "user_id": 647,
+            "person_responsible": 3010,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 3010,
+              "name": "Simona Grigaliūnienė"
+            },
+            "reservable": {
+              "id": 149,
+              "name": "201 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 92341,
+            "name": "Physics",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 149,
+            "user_id": 647,
+            "person_responsible": 2829,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2829,
+              "name": "Violeta Bulbenkienė"
+            },
+            "reservable": {
+              "id": 149,
+              "name": "201 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 110914,
+            "name": "Innovation Management and Project Management",
+            "from": "2026-10-01 13:40",
+            "to": "2026-10-01 15:10",
+            "from_time": "13:40",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 149,
+            "user_id": 647,
+            "person_responsible": 3010,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 3010,
+              "name": "Simona Grigaliūnienė"
+            },
+            "reservable": {
+              "id": 149,
+              "name": "201 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 106371,
+            "name": "Profesinė užsienio  kalba 1",
+            "from": "2026-10-01 15:20",
+            "to": "2026-10-01 16:50",
+            "from_time": "15:20",
+            "to_time": "16:50",
+            "type": "lecture",
+            "reservable_id": 149,
+            "user_id": 647,
+            "person_responsible": 6919,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 6919,
+              "name": "Olga Drozdova"
+            },
+            "reservable": {
+              "id": 149,
+              "name": "201 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 106402,
+            "name": "English for Specific Purposes 1",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 149,
+            "user_id": 647,
+            "person_responsible": 6919,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 6919,
+              "name": "Olga Drozdova"
+            },
+            "reservable": {
+              "id": 149,
+              "name": "201 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 106416,
+            "name": "English for Specific Purposes 1",
+            "from": "2026-10-01 18:40",
+            "to": "2026-10-01 20:10",
+            "from_time": "18:40",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 149,
+            "user_id": 647,
+            "person_responsible": 6919,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 6919,
+              "name": "Olga Drozdova"
+            },
+            "reservable": {
+              "id": 149,
+              "name": "201 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 155,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 91010,
+            "name": "Matematinė analizė 1",
+            "from": "2026-10-01 10:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "10:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 155,
+            "user_id": 647,
+            "person_responsible": 1135,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1135,
+              "name": "Marta Karaliutė"
+            },
+            "reservable": {
+              "id": 155,
+              "name": "316 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 150,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 91877,
+            "name": "Laivo inžinerinė grafika",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 150,
+            "user_id": 647,
+            "person_responsible": 1716,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1716,
+              "name": "Tatjana Djačkova"
+            },
+            "reservable": {
+              "id": 150,
+              "name": "243 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 108986,
+            "name": "Experimental Marine Hydrodynamics",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 150,
+            "user_id": 647,
+            "person_responsible": 1268,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1268,
+              "name": "Vasilij Djačkov"
+            },
+            "reservable": {
+              "id": 150,
+              "name": "243 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 154,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 95229,
+            "name": "Duomenų struktūros ir algoritmai (Pratybos)",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 154,
+            "user_id": 647,
+            "person_responsible": 1283,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1283,
+              "name": "Vitalij Denisov"
+            },
+            "reservable": {
+              "id": 154,
+              "name": "311 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 109373,
+            "name": "Programavimas Python",
+            "from": "2026-10-01 13:40",
+            "to": "2026-10-01 15:10",
+            "from_time": "13:40",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 154,
+            "user_id": 647,
+            "person_responsible": 1135,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1135,
+              "name": "Marta Karaliutė"
+            },
+            "reservable": {
+              "id": 154,
+              "name": "311 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 104,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 100868,
+            "name": "Duomenų struktūros ir algoritmai",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 104,
+            "user_id": 647,
+            "person_responsible": 1202,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1202,
+              "name": "Robertas Jurkus"
+            },
+            "reservable": {
+              "id": 104,
+              "name": "319 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 100886,
+            "name": "Data Structures and Algorithms",
+            "from": "2026-10-01 13:40",
+            "to": "2026-10-01 16:50",
+            "from_time": "13:40",
+            "to_time": "16:50",
+            "type": "lecture",
+            "reservable_id": 104,
+            "user_id": 647,
+            "person_responsible": 1202,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1202,
+              "name": "Robertas Jurkus"
+            },
+            "reservable": {
+              "id": 104,
+              "name": "319 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 103950,
+            "name": "Lygiagretusis programavimas",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 104,
+            "user_id": 647,
+            "person_responsible": 690,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 690,
+              "name": "Julius Venskus"
+            },
+            "reservable": {
+              "id": 104,
+              "name": "319 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 201,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 102094,
+            "name": "Introduction to Data Mining and Visualization",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 201,
+            "user_id": 647,
+            "person_responsible": 311,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 311,
+              "name": "Dalia Baziukė"
+            },
+            "reservable": {
+              "id": 201,
+              "name": "331 aud."
+            },
+            "is_mine": false
+          },
+          {
+            "id": 102047,
+            "name": "Giliojo mokymosi architektūros",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 201,
+            "user_id": 647,
+            "person_responsible": 311,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 311,
+              "name": "Dalia Baziukė"
+            },
+            "reservable": {
+              "id": 201,
+              "name": "331 aud."
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 111,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 110916,
+            "name": "Medžiagotyra ir medžiagų inžinerija",
+            "from": "2026-10-01 12:00",
+            "to": "2026-10-01 13:30",
+            "from_time": "12:00",
+            "to_time": "13:30",
+            "type": "lecture",
+            "reservable_id": 111,
+            "user_id": 647,
+            "person_responsible": 3048,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 3048,
+              "name": "Žilvinas Kryževičius"
+            },
+            "reservable": {
+              "id": 111,
+              "name": "111 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 92696,
+            "name": "Fizikinė chemija",
+            "from": "2026-10-01 15:20",
+            "to": "2026-10-01 16:50",
+            "from_time": "15:20",
+            "to_time": "16:50",
+            "type": "lecture",
+            "reservable_id": 111,
+            "user_id": 647,
+            "person_responsible": 3292,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 3292,
+              "name": "Viktorija Jakubauskaitė"
+            },
+            "reservable": {
+              "id": 111,
+              "name": "111 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 105672,
+            "name": "Gamybos logistika",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 111,
+            "user_id": 647,
+            "person_responsible": 2673,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2673,
+              "name": "Jolanta Janutėnienė"
+            },
+            "reservable": {
+              "id": 111,
+              "name": "111 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 64,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 92355,
+            "name": "Physics (lab.)",
+            "from": "2026-10-01 13:40",
+            "to": "2026-10-01 15:10",
+            "from_time": "13:40",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 64,
+            "user_id": 647,
+            "person_responsible": 2829,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2829,
+              "name": "Violeta Bulbenkienė"
+            },
+            "reservable": {
+              "id": 64,
+              "name": "216 aud., (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 153,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 104124,
+            "name": "Medinių konstrukcijų projektavimas",
+            "from": "2026-10-01 13:40",
+            "to": "2026-10-01 15:10",
+            "from_time": "13:40",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 153,
+            "user_id": 647,
+            "person_responsible": 1402,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1402,
+              "name": "Darius Narmontas"
+            },
+            "reservable": {
+              "id": 153,
+              "name": "302 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 84,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 110104,
+            "name": "Basic Ship Design",
+            "from": "2026-10-01 13:40",
+            "to": "2026-10-01 15:10",
+            "from_time": "13:40",
+            "to_time": "15:10",
+            "type": "lecture",
+            "reservable_id": 84,
+            "user_id": 647,
+            "person_responsible": 1716,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1716,
+              "name": "Tatjana Djačkova"
+            },
+            "reservable": {
+              "id": 84,
+              "name": "235 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 110116,
+            "name": "Basic Ship Design",
+            "from": "2026-10-01 15:20",
+            "to": "2026-10-01 16:50",
+            "from_time": "15:20",
+            "to_time": "16:50",
+            "type": "lecture",
+            "reservable_id": 84,
+            "user_id": 647,
+            "person_responsible": 1716,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1716,
+              "name": "Tatjana Djačkova"
+            },
+            "reservable": {
+              "id": 84,
+              "name": "235 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          },
+          {
+            "id": 93948,
+            "name": "Uosto infrastruktūros projektavimas ir plėtra",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 84,
+            "user_id": 647,
+            "person_responsible": 925,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 925,
+              "name": "Birutė Plačienė"
+            },
+            "reservable": {
+              "id": 84,
+              "name": "235 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 151,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 90101,
+            "name": "Statinių statybos organizavimas ir kursinis projektas",
+            "from": "2026-10-01 15:20",
+            "to": "2026-10-01 18:30",
+            "from_time": "15:20",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 151,
+            "user_id": 647,
+            "person_responsible": 2172,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2172,
+              "name": "Vygantas Bagočius"
+            },
+            "reservable": {
+              "id": 151,
+              "name": "307 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 138,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 105840,
+            "name": "Aukštoji matematika",
+            "from": "2026-10-01 15:20",
+            "to": "2026-10-01 20:10",
+            "from_time": "15:20",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 138,
+            "user_id": 647,
+            "person_responsible": 1188,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1188,
+              "name": "Rasa Grigolienė"
+            },
+            "reservable": {
+              "id": 138,
+              "name": "107 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 147,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 102450,
+            "name": "Laivo eigumas",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 147,
+            "user_id": 647,
+            "person_responsible": 1692,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1692,
+              "name": "Romanas Ryžkovas"
+            },
+            "reservable": {
+              "id": 147,
+              "name": "246 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 146,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 102583,
+            "name": "Maritime Safety",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 146,
+            "user_id": 647,
+            "person_responsible": 6241,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 6241,
+              "name": "Mindaugas Česnauskis"
+            },
+            "reservable": {
+              "id": 146,
+              "name": "236 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 203,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 105702,
+            "name": "Laivyno techninė priežiūra ir klasifikacinės bendrovės",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 203,
+            "user_id": 647,
+            "person_responsible": 2086,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2086,
+              "name": "Rima Mickevičienė"
+            },
+            "reservable": {
+              "id": 203,
+              "name": "244 a. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 362,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 108573,
+            "name": "Stalo teniso treniruotės",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 18:30",
+            "from_time": "17:00",
+            "to_time": "18:30",
+            "type": "lecture",
+            "reservable_id": 362,
+            "user_id": 647,
+            "person_responsible": 235,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 235,
+              "name": "Rasa Gylienė"
+            },
+            "reservable": {
+              "id": 362,
+              "name": "342 a. Aktų salė (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 158,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 95197,
+            "name": "Tiriamojo projektinio darbo metodika",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 158,
+            "user_id": 647,
+            "person_responsible": 1283,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1283,
+              "name": "Vitalij Denisov"
+            },
+            "reservable": {
+              "id": 158,
+              "name": "312 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 165,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 102225,
+            "name": "Įmonių elektros įrenginiai ir tinklai",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 165,
+            "user_id": 647,
+            "person_responsible": 1691,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 1691,
+              "name": "Romanas Gudlekis"
+            },
+            "reservable": {
+              "id": 165,
+              "name": "422 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 365,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 103895,
+            "name": "Gamybos valdymo metodologija",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 365,
+            "user_id": 647,
+            "person_responsible": 2462,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 647,
+              "name": "Ieva Žemgulytė-Tenkutienė"
+            },
+            "responsible": {
+              "id": 2462,
+              "name": "Rimantas Didžiokas"
+            },
+            "reservable": {
+              "id": 365,
+              "name": "103 A aud., (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 157,
+      "reservations": {
+        "2026-10-01": [
+          {
+            "id": 106163,
+            "name": "Electronical Marketing",
+            "from": "2026-10-01 17:00",
+            "to": "2026-10-01 20:10",
+            "from_time": "17:00",
+            "to_time": "20:10",
+            "type": "lecture",
+            "reservable_id": 157,
+            "user_id": 2099,
+            "person_responsible": 1859,
+            "approved": true,
+            "sanctioned": true,
+            "is_remote": 0,
+            "reservable_pin": "item",
+            "user": {
+              "id": 2099,
+              "name": "Sandra Sirvidienė"
+            },
+            "responsible": {
+              "id": 1859,
+              "name": "Edita Baranskaitė"
+            },
+            "reservable": {
+              "id": 157,
+              "name": "310 aud. (Bijūnų g. 17)"
+            },
+            "is_mine": false
+          }
+        ]
+      }
+    }
+  ]
+}
