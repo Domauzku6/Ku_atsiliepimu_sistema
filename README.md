@@ -1,45 +1,34 @@
 # Ku_atsiliepimu_sistema
 
-## Failai
+Paskaitų atsiliepimų kioskas (Raspberry Pi su jutikliniu ekranu arba Windows).
+Studentas pasirenka kabinetą, mato vykstančią paskaitą ir dėstytoją, įvertina 1–10,
+o jei įvertinimas mažesnis nei 5 – parašo komentarą ekraninėje klaviatūroje.
+
+## Failai (`UI PYGAME/`)
 
 | Failas | Paskirtis |
 |---|---|
-| `download_reservations.py` | Atsisiunčia šiandienos tvarkaraštį į `reservations.json` |
+| `kiosk.py` | Kiosko programa (pygame): kabinetas → paskaita ir įvertinimas → komentaras → ačiū |
 | `calendar_lookup.py` | Pagal kabinetą randa, ar dabar vyksta paskaita ir kas ją veda |
+| `download_reservations.py` | Atsisiunčia šiandienos tvarkaraštį į `reservations.json` |
+| `create_csv.py` | Sukuria `proof_of_concept.csv` (jei jo nėra) ir prideda atsiliepimus |
+| `feedback_UI.py` | Ankstesnė UI versija; iš jos naudojama `wrap_text()` |
 
-## Funkcijos
+`reservations.json`, `proof_of_concept.csv` ir `browser_profile/` sukuriami paleidus programą ir į git nekeliami.
 
-```python
-import download_reservations as dl
+## CSV stulpeliai
 
-calendar_lookup("215")      # grąžina dėstytoją ir paskaitą kabinete, jei kas nors vyksta
-current_time()              # grąžina esamą laiką
-dl.get_todays_date_iso()    # grąžina esamą dieną 'YYYY-MM-DD'
-```
+| kabinetas | dėstytojas | paskaita | laikas | atsiliepimas (1-10) | komentaras |
+|---|---|---|---|---|---|
+| 311 | Andrius Stulgys | Kompiuterių ir pramoniniai tinklai | 2026-09-29 11:30 | 10 | |
 
-## Testavimas
+## Paleidimas
+
 ```bash
 git clone https://github.com/Domauzku6/Ku_atsiliepimu_sistema.git
-```
-
-```bash
+cd "Ku_atsiliepimu_sistema/UI PYGAME"
 pip install -r requirements.txt
+python kiosk.py
 ```
 
-```bash
-python calendar_lookup.py
-```
-
-## Trūksta
-
-- [ ] **GUI**: siūlau per bet kurį AI, svarbu kažkas gražaus ir veikiančio
-siūlau naudot pygame library https://www.pygame.org/docs/
-```bash
-pip install pygame_ce
-```
-- [ ] **Atsakymų saugojimas**: funkcija arba metodas, kuris gautą atsakymą saugotų lokaliai CSV faile `proof_of_concept.csv`, su stulpeliais:
-
-| kabinetas    | dėstytojas      | paskaita                           | laikas             | atsiliepimas (1–10) |
-|---|---|---|---|---|
-|311 bijunu 17 | Andrius Stulgys | kompiuteriu ir pramoniniai tinklai | "2026-09-29 11:30" |   10                |
-
+Kioskas atsidaro per visą ekraną. Išeiti: **Esc** arba 15 kartų greitai paliesti paskaitos kortelę.

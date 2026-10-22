@@ -1,6 +1,7 @@
 import ctypes
 import sys
 import threading
+from functools import lru_cache
 
 import pygame
 
@@ -11,9 +12,14 @@ from feedback_UI import wrap_text
 
 W, H = 1024, 600
 CARD_RECT = pygame.Rect(60, 110, W - 120, 220)   # paskaitos kortelė
-EXIT_TAPS, EXIT_GAP_MS = 15, 1500                 # slaptas išėjimas: 15 paspaudimų iš eilės
+EXIT_TAPS, EXIT_GAP_MS = 15, 1500                 #isejimas: 15 paspaudimų iš eilės
 BG, CARD, TEXT, MUTED = (245, 246, 250), (255, 255, 255), (30, 33, 40), (120, 125, 135)
 BLUE, RED, GREEN = (40, 100, 220), (210, 60, 60), (40, 160, 90)
+KEY = (225, 228, 236)
+
+# Ekraninė klaviatūra komentarui (Raspberry Pi su jutikliniu ekranu neturi fizinės klaviatūros)
+KEYBOARD_ROWS = ["ąčęėįšųūž←", "qwertyuiop", "asdfghjkl", "zxcvbnm,.?"]
+FONTS = "segoeui,dejavusans,freesans,liberationsans"   # Windows / Raspberry Pi OS
 
 # Maketas aprašytas 1024x600 koordinatėmis, bet piešiama tikra ekrano raiška:
 # S – mastelis, OX/OY – poslinkis, kad vaizdas būtų ekrano centre.
@@ -28,6 +34,7 @@ def setup_screen():
         except Exception:
             ctypes.windll.user32.SetProcessDPIAware()
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    pygame.mouse.set_visible(sys.platform == "win32")   # jutikliniame ekrane pelės žymeklio nereikia
     sw, sh = screen.get_size()
     S = min(sw / W, sh / H)
     OX, OY = (sw - W * S) / 2, (sh - H * S) / 2
@@ -48,7 +55,12 @@ def to_design(pos):
 
 
 def font(size, bold=False):
-    return pygame.font.SysFont("segoeui", px(size), bold=bold)
+    return _font(px(size), bold)
+
+
+@lru_cache(maxsize=None)   # Pi lėtas – šriftą įkeliame tik kartą, o ne kiekviename kadre
+def _font(size, bold):
+    return pygame.font.SysFont(FONTS, size, bold=bold)
 
 
 def rect(screen, color, r, radius, width=0):
@@ -59,9 +71,9 @@ class Button:
     def __init__(self, rect, label, color=BLUE):
         self.rect, self.label, self.color = pygame.Rect(rect), label, color
 
-    def draw(self, screen, f):
+    def draw(self, screen, f, text_color=(255, 255, 255)):
         rect(screen, self.color, self.rect, 12)
-        center(screen, f, self.label, self.rect.centery, (255, 255, 255), self.rect.centerx)
+        center(screen, f, self.label, self.rect.centery, text_color, self.rect.centerx)
 
     def clicked(self, e):
         return e.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(e.pos)
@@ -105,7 +117,11 @@ class App:
         self.score_btns = [Button((42 + i * 96, 470, 84, 84), str(i + 1), RED if i < 4 else BLUE)
                            for i in range(10)]
         self.back_btn = Button((20, 20, 120, 50), "Atgal", MUTED)
-        self.send_btn = Button((W // 2 - 150, 430, 300, 70), "Siųsti", GREEN)
+        # klaviatūra: 10 klavišų eilutėje po 92 px, 8 px tarpai; trumpesnės eilutės centruojamos
+        self.keyboard = [Button((W // 2 - (len(row) * 100 - 8) // 2 + i * 100, 205 + r * 72, 92, 64), k, KEY)
+                         for r, row in enumerate(KEYBOARD_ROWS) for i, k in enumerate(row)]
+        self.space_btn = Button((W // 2 - 496, 493, 692, 64), "tarpas", KEY)
+        self.send_btn = Button((W // 2 + 204, 493, 292, 64), "Siųsti", GREEN)
 
     # ---------- būsenos ----------
     def reset(self):
@@ -174,6 +190,11 @@ class App:
                     self.finish()
             elif self.back_btn.clicked(e):
                 self.next_student()
+            elif self.space_btn.clicked(e):
+                self.comment = (self.comment + " ")[:200]
+            for b in self.keyboard:
+                if b.clicked(e):
+                    self.comment = self.comment[:-1] if b.label == "←" else (self.comment + b.label)[:200]
 
     # ---------- piešimas ----------
     def draw(self):
@@ -204,14 +225,15 @@ class App:
 
         elif self.page == "comment":
             self.back_btn.draw(s, self.small)
-            center(s, self.big, f"Įvertinote {self.score}/10", 110)
-            center(s, self.mid, "Kas nepatiko? Parašykite komentarą:", 180, MUTED)
-            box = pygame.Rect(80, 230, W - 160, 150)
+            center(s, self.mid, f"Įvertinote {self.score}/10 – kas nepatiko?", 45)
+            box = pygame.Rect(20, 85, W - 40, 105)
             rect(s, CARD, box, 12)
             rect(s, BLUE, box, 12, width=2)
             cursor = "|" if pygame.time.get_ticks() // 500 % 2 else ""
-            for i, line in enumerate(wrap_text(self.small, self.comment + cursor, px(box.width - 30), 5)):
-                s.blit(self.small.render(line, True, TEXT), to_screen((box.x + 15, box.y + 12 + i * 27, 0, 0)))
+            for i, line in enumerate(wrap_text(self.small, self.comment + cursor, px(box.width - 30), 3)):
+                s.blit(self.small.render(line, True, TEXT), to_screen((box.x + 15, box.y + 10 + i * 30, 0, 0)))
+            for b in self.keyboard + [self.space_btn]:
+                b.draw(s, self.mid, TEXT)
             self.send_btn.color = GREEN if self.comment.strip() else MUTED
             self.send_btn.draw(s, self.mid)
 
@@ -228,8 +250,13 @@ class App:
             for e in pygame.event.get():
                 if e.type == pygame.QUIT or (e.type == pygame.KEYDOWN and e.key == pygame.K_ESCAPE):
                     self.running = False
-                if e.type == pygame.MOUSEBUTTONDOWN:  # paspaudimą verčiame atgal į 1024x600 koordinates
-                    e = pygame.event.Event(e.type, pos=to_design(e.pos), button=e.button)
+                if e.type == pygame.FINGERDOWN:   # jutiklinis ekranas: x, y ateina 0..1 intervale
+                    sw, sh = self.screen.get_size()
+                    e = pygame.event.Event(pygame.MOUSEBUTTONDOWN, pos=to_design((e.x * sw, e.y * sh)), button=1)
+                elif e.type == pygame.MOUSEBUTTONDOWN:
+                    if getattr(e, "touch", False):   # SDL dubliuoja lietimą kaip pelę – tą jau apdorojome
+                        continue
+                    e = pygame.event.Event(e.type, pos=to_design(e.pos), button=e.button)  # į 1024x600
                 self.handle(e)
             self.draw()
             self.clock.tick(30)
