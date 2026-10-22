@@ -1,153 +1,160 @@
-import csv
+import ctypes
+import sys
 import threading
-from datetime import datetime
-from pathlib import Path
 
 import pygame
 
-from calendar_lookup import calendar_lookup, current_time
 import download_reservations as dl
-
-CSV_FILE = Path(__file__).parent / "proof_of_concept.csv"
-HEADERS = ["kabinetas", "dėstytojas", "paskaita", "laikas", "atsiliepimas (1-10)", "komentaras"]
+from calendar_lookup import calendar_lookup, current_time
+from create_csv import create_csv, save_to_csv
+from feedback_UI import wrap_text
 
 W, H = 1024, 600
+CARD_RECT = pygame.Rect(60, 110, W - 120, 220)   # paskaitos kortelė
+EXIT_TAPS, EXIT_GAP_MS = 15, 1500                 # slaptas išėjimas: 15 paspaudimų iš eilės
 BG, CARD, TEXT, MUTED = (245, 246, 250), (255, 255, 255), (30, 33, 40), (120, 125, 135)
 BLUE, RED, GREEN = (40, 100, 220), (210, 60, 60), (40, 160, 90)
 
+# Maketas aprašytas 1024x600 koordinatėmis, bet piešiama tikra ekrano raiška:
+# S – mastelis, OX/OY – poslinkis, kad vaizdas būtų ekrano centre.
+S, OX, OY = 1.0, 0, 0
 
-def save_to_csv(kabinetas, destytojas, paskaita, atsiliepimas, komentaras=""):
-    new_file = not CSV_FILE.exists() or CSV_FILE.stat().st_size == 0
-    with CSV_FILE.open("a", newline="", encoding="utf-8-sig" if new_file else "utf-8") as f:
-        w = csv.writer(f)
-        if new_file:
-            w.writerow(HEADERS)
-        w.writerow([kabinetas, destytojas, paskaita,
-                    datetime.now().strftime("%Y-%m-%d %H:%M"), atsiliepimas, komentaras.strip()])
+
+def setup_screen():
+    global S, OX, OY
+    if sys.platform == "win32":
+        try:  # kad Windows neištemptų (nesulietų) lango esant 125–200 % mastelio nustatymui
+            ctypes.windll.shcore.SetProcessDpiAwareness(2)
+        except Exception:
+            ctypes.windll.user32.SetProcessDPIAware()
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    sw, sh = screen.get_size()
+    S = min(sw / W, sh / H)
+    OX, OY = (sw - W * S) / 2, (sh - H * S) / 2
+    return screen
+
+
+def px(v):
+    return round(v * S)
+
+
+def to_screen(rect):
+    x, y, w, h = rect
+    return pygame.Rect(round(OX + x * S), round(OY + y * S), px(w), px(h))
+
+
+def to_design(pos):
+    return (pos[0] - OX) / S, (pos[1] - OY) / S
+
+
+def font(size, bold=False):
+    return pygame.font.SysFont("segoeui", px(size), bold=bold)
+
+
+def rect(screen, color, r, radius, width=0):
+    pygame.draw.rect(screen, color, to_screen(r), max(width and 1, px(width)), border_radius=px(radius))
 
 
 class Button:
     def __init__(self, rect, label, color=BLUE):
         self.rect, self.label, self.color = pygame.Rect(rect), label, color
 
-    def draw(self, screen, font):
-        pygame.draw.rect(screen, self.color, self.rect, border_radius=12)
-        txt = font.render(self.label, True, (255, 255, 255))
-        screen.blit(txt, txt.get_rect(center=self.rect.center))
+    def draw(self, screen, f):
+        rect(screen, self.color, self.rect, 12)
+        center(screen, f, self.label, self.rect.centery, (255, 255, 255), self.rect.centerx)
 
-    def clicked(self, event):
-        return event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos)
-
-
-def center(screen, font, text, y, color=TEXT):
-    img = font.render(text, True, color)
-    screen.blit(img, img.get_rect(center=(W // 2, y)))
+    def clicked(self, e):
+        return e.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(e.pos)
 
 
-def wrap_lines(font, text, max_width):
-    lines, line = [], ""
-    for word in text.split():
-        test = f"{line} {word}".strip()
-        if line and font.size(test)[0] > max_width:
-            lines.append(line)
-            line = word
-        else:
-            line = test
-    return lines + [line]
+def center(screen, f, text, y, color=TEXT, x=W // 2):
+    img = f.render(text, True, color)
+    screen.blit(img, img.get_rect(center=(round(OX + x * S), round(OY + y * S))))
 
 
-def center_fit(screen, text, cy, max_width, size, bold=False, color=TEXT, max_lines=2, min_size=18):
-    """Centruoja tekstą aplink cy: mažina šriftą ir laužo į kelias eilutes, kad tilptų į max_width."""
+def center_fit(screen, text, cy, max_width, size, bold=False, color=TEXT, max_lines=2):
+    """Laužo tekstą į eilutes ir mažina šriftą, kol viskas tilps į max_width."""
     while True:
-        font = pygame.font.SysFont("segoeui", size, bold=bold)
-        lines = wrap_lines(font, text, max_width)
-        if (len(lines) <= max_lines and all(font.size(l)[0] <= max_width for l in lines)) or size <= min_size:
+        f = font(size, bold)
+        lines = wrap_text(f, text, px(max_width), max_lines)
+        if " ".join(lines) == " ".join(text.split()) or size <= 18:
             break
         size -= 2
-    line_h = font.get_linesize()
-    top = cy - line_h * len(lines) // 2
-    for i, ln in enumerate(lines[:max_lines]):
-        img = font.render(ln, True, color)
-        screen.blit(img, img.get_rect(midtop=(W // 2, top + i * line_h)))
+    line_h = f.get_linesize() / S
+    top = cy - line_h * len(lines) / 2
+    for i, line in enumerate(lines):
+        center(screen, f, line, top + (i + 0.5) * line_h, color)
 
 
 class App:
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((W, H))
+        create_csv()
+        self.screen = setup_screen()
         pygame.display.set_caption("KU atsiliepimai")
         self.clock = pygame.time.Clock()
-        self.big = pygame.font.SysFont("segoeui", 44, bold=True)
-        self.mid = pygame.font.SysFont("segoeui", 30)
-        self.small = pygame.font.SysFont("segoeui", 22)
-
-        self.page = "cabinet"
-        self.cabinet = ""
-        self.lecture = None          # (dėstytojas, paskaita)
-        self.score = None
-        self.comment = ""
-        self.error = ""
+        self.big, self.mid, self.small = font(44, True), font(30), font(22)
         self.thanks_until = 0
+        self.taps, self.last_tap, self.running = 0, 0, True
+        self.reset()
 
-        # Skaičių klaviatūra kabinetui
-        keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "0", "⌫"]
-        self.keypad = [Button((W // 2 - 165 + (i % 3) * 115, 170 + (i // 3) * 85, 100, 70), k)
+        keys = "123456789A0←"
+        self.keypad = [Button((W // 2 - 165 + i % 3 * 115, 170 + i // 3 * 85, 100, 70), k)
                        for i, k in enumerate(keys)]
         self.ok_btn = Button((W // 2 - 165, 515, 330, 60), "Toliau", GREEN)
-
-        # 1–10 įvertinimo mygtukai apačioje
-        self.score_btns = [Button((42 + i * 96, 470, 84, 84), str(i + 1),
-                                  RED if i < 4 else BLUE) for i in range(10)]
+        self.score_btns = [Button((42 + i * 96, 470, 84, 84), str(i + 1), RED if i < 4 else BLUE)
+                           for i in range(10)]
         self.back_btn = Button((20, 20, 120, 50), "Atgal", MUTED)
         self.send_btn = Button((W // 2 - 150, 430, 300, 70), "Siųsti", GREEN)
 
-    # ---------- logika ----------
+    # ---------- būsenos ----------
+    def reset(self):
+        self.cabinet, self.lecture, self.error = "", None, ""
+        self.next_student("cabinet")
+
+    def next_student(self, page="rating"):
+        """Po įvertinimo lieka ta pati paskaita – kitas studentas gali iškart vertinti."""
+        self.page, self.score, self.comment = page, None, ""
+        pygame.key.stop_text_input()
+
     def start_lookup(self):
         self.page, self.error = "loading", ""
 
         def work():
             try:
-                result = calendar_lookup(self.cabinet)
+                self.lecture = calendar_lookup(self.cabinet)
             except Exception as e:
                 self.error, self.page = f"Klaida: {e}", "cabinet"
                 return
-            if result is None:
-                self.error, self.page = f"Kabinete {self.cabinet} dabar paskaitos nėra", "cabinet"
+            if self.lecture:
+                self.page = "rating"
             else:
-                self.lecture, self.page = result, "rating"
+                self.error, self.page = f"Kabinete {self.cabinet} dabar paskaitos nėra", "cabinet"
 
         threading.Thread(target=work, daemon=True).start()
 
     def finish(self):
-        lecturer, name = self.lecture
-        save_to_csv(self.cabinet, lecturer or "", name, self.score, self.comment)
+        save_to_csv(self.cabinet, self.score, self.comment, lecture=self.lecture)
         self.page, self.thanks_until = "thanks", pygame.time.get_ticks() + 3000
-
-    def next_student(self):
-        """Lieka ta pati paskaita – kitas studentas gali iškart vertinti."""
-        self.page, self.score, self.comment = "rating", None, ""
-        pygame.key.stop_text_input()
-
-    def reset(self):
-        self.page, self.cabinet, self.lecture = "cabinet", "", None
-        self.score, self.comment, self.error = None, "", ""
-        pygame.key.stop_text_input()
 
     # ---------- įvykiai ----------
     def handle(self, e):
         if self.page == "cabinet":
             for b in self.keypad:
                 if b.clicked(e):
-                    if b.label == "⌫":
-                        self.cabinet = self.cabinet[:-1]
-                    elif len(self.cabinet) < 5:
-                        self.cabinet += b.label
+                    self.cabinet = self.cabinet[:-1] if b.label == "←" else (self.cabinet + b.label)[:5]
             if self.ok_btn.clicked(e) and self.cabinet:
                 self.start_lookup()
 
         elif self.page == "rating":
             if self.back_btn.clicked(e):
                 self.reset()
+            if e.type == pygame.MOUSEBUTTONDOWN and CARD_RECT.collidepoint(e.pos):
+                now = pygame.time.get_ticks()
+                self.taps = self.taps + 1 if now - self.last_tap < EXIT_GAP_MS else 1
+                self.last_tap = now
+                if self.taps >= EXIT_TAPS:
+                    self.running = False
             for b in self.score_btns:
                 if b.clicked(e):
                     self.score = int(b.label)
@@ -158,17 +165,15 @@ class App:
                         self.finish()
 
         elif self.page == "comment":
-            if e.type == pygame.TEXTINPUT and len(self.comment) < 200:
-                self.comment += e.text
+            if e.type == pygame.TEXTINPUT:
+                self.comment = (self.comment + e.text)[:200]
             elif e.type == pygame.KEYDOWN and e.key == pygame.K_BACKSPACE:
                 self.comment = self.comment[:-1]
             elif self.send_btn.clicked(e) or (e.type == pygame.KEYDOWN and e.key == pygame.K_RETURN):
                 if self.comment.strip():
-                    pygame.key.stop_text_input()
                     self.finish()
             elif self.back_btn.clicked(e):
-                self.page, self.comment = "rating", ""
-                pygame.key.stop_text_input()
+                self.next_student()
 
     # ---------- piešimas ----------
     def draw(self):
@@ -176,14 +181,12 @@ class App:
         s.fill(BG)
 
         if self.page == "cabinet":
-            center(s, self.big, "Pasirinkite kabinetą", 60)
-            pygame.draw.rect(s, CARD, (W // 2 - 165, 100, 330, 56), border_radius=10)
+            center(s, self.big, "Pasirinkite kabinetą", 38)
+            center(s, self.small, self.error, 80, RED)
+            rect(s, CARD, (W // 2 - 165, 100, 330, 56), 10)
             center(s, self.big, self.cabinet or "—", 128)
-            for b in self.keypad:
+            for b in self.keypad + [self.ok_btn]:
                 b.draw(s, self.mid)
-            self.ok_btn.draw(s, self.mid)
-            if self.error:
-                center(s, self.small, self.error, 88, RED)
 
         elif self.page == "loading":
             center(s, self.big, "Ieškoma paskaitos...", H // 2)
@@ -192,10 +195,9 @@ class App:
             lecturer, name = self.lecture
             self.back_btn.draw(s, self.small)
             center(s, self.small, f"{dl.get_todays_date_iso()}  {current_time()}   •   Kab. {self.cabinet}", 60, MUTED)
-            pygame.draw.rect(s, CARD, (60, 110, W - 120, 220), border_radius=16)
-            card_w = W - 120 - 60        # kortelė su 30 px paraštėmis
-            center_fit(s, name, 190, card_w, 44, bold=True)
-            center_fit(s, lecturer or "Dėstytojas nenurodytas", 285, card_w, 30, color=MUTED, max_lines=1)
+            rect(s, CARD, CARD_RECT, 16)
+            center_fit(s, name, 190, W - 180, 44, bold=True)
+            center_fit(s, lecturer or "Dėstytojas nenurodytas", 285, W - 180, 30, color=MUTED, max_lines=1)
             center(s, self.mid, "Kaip vertinate paskaitą?", 420)
             for b in self.score_btns:
                 b.draw(s, self.mid)
@@ -205,19 +207,11 @@ class App:
             center(s, self.big, f"Įvertinote {self.score}/10", 110)
             center(s, self.mid, "Kas nepatiko? Parašykite komentarą:", 180, MUTED)
             box = pygame.Rect(80, 230, W - 160, 150)
-            pygame.draw.rect(s, CARD, box, border_radius=12)
-            pygame.draw.rect(s, BLUE, box, 2, border_radius=12)
-            cursor = "|" if (pygame.time.get_ticks() // 500) % 2 else ""
-            # paprastas eilučių laužymas
-            words, lines, line = (self.comment + cursor).split(" "), [], ""
-            for w in words:
-                if self.small.size(line + w)[0] > box.width - 30:
-                    lines.append(line)
-                    line = ""
-                line += w + " "
-            lines.append(line)
-            for i, ln in enumerate(lines[-5:]):
-                s.blit(self.small.render(ln, True, TEXT), (box.x + 15, box.y + 12 + i * 27))
+            rect(s, CARD, box, 12)
+            rect(s, BLUE, box, 12, width=2)
+            cursor = "|" if pygame.time.get_ticks() // 500 % 2 else ""
+            for i, line in enumerate(wrap_text(self.small, self.comment + cursor, px(box.width - 30), 5)):
+                s.blit(self.small.render(line, True, TEXT), to_screen((box.x + 15, box.y + 12 + i * 27, 0, 0)))
             self.send_btn.color = GREEN if self.comment.strip() else MUTED
             self.send_btn.draw(s, self.mid)
 
@@ -230,14 +224,16 @@ class App:
         pygame.display.flip()
 
     def run(self):
-        while True:
+        while self.running:
             for e in pygame.event.get():
                 if e.type == pygame.QUIT or (e.type == pygame.KEYDOWN and e.key == pygame.K_ESCAPE):
-                    pygame.quit()
-                    return
+                    self.running = False
+                if e.type == pygame.MOUSEBUTTONDOWN:  # paspaudimą verčiame atgal į 1024x600 koordinates
+                    e = pygame.event.Event(e.type, pos=to_design(e.pos), button=e.button)
                 self.handle(e)
             self.draw()
             self.clock.tick(30)
+        pygame.quit()
 
 
 if __name__ == "__main__":
